@@ -12,7 +12,7 @@ function ProductProvider({ children }) {
     const navigate = useNavigate();
     async function getProducts() {
         try {
-            const res = await fetch("src/db/data.json");
+            const res = await fetch("public/data.json");
             const data = await res.json();
             // console.log(data);
 
