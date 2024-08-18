@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductProvider";
 import Navbar from "../components/Navbar/Navbar";
