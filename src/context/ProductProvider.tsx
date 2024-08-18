@@ -2,6 +2,7 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, Toaster } from "sonner";
+import productData from "../db/data.json";
 
 export const ProductContext = createContext();
 
@@ -10,16 +11,8 @@ function ProductProvider({ children }) {
     const [cart, setCart] = useState([]);
     const [discount, setDiscount] = useState(false);
     const navigate = useNavigate();
-    async function getProducts() {
-        try {
-            const res = await fetch("public/data.json");
-            const data = await res.json();
-            // console.log(data);
-
-            if (res.ok) setProducts(data?.data);
-        } catch (err) {
-            console.error("failed to fetch");
-        }
+    function getProducts() {
+        setTimeout(() => setProducts(productData), 100)
     }
 
     function addToCart(product) {
